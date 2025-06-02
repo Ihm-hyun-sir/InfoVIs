@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>UFO Sightings Visualization</title>
+
+  <!-- 1. D3.js 먼저 로드 -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <!-- 2. Vega, Vega-Lite, Vega-Embed 순서대로 -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <!-- 3. 스타일시트 & main.js -->
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <main>
+    <!-- 필터 컨트롤: for-속성으로 레이블 명시 -->
+    <section id="controls">
+      <label for="stateSelect">State:</label>
+      <select id="stateSelect"></select>
+
+      <label for="yearSelect">Year:</label>
+      <select id="yearSelect"></select>
+    </section>
+
+    <!-- 지도 및 통계 -->
+    <section id="map-box" class="map-box">
+      <div id="worldmap" class="map"></div>
+      <div id="state-bar" class="map-side-chart"></div>
+    </section>
+
+    <div id="stats">
+      Number of sightings: <span id="filtered-count">0</span>
+    </div>
+  
+  <section id="charts" class="chart-box">
+    <div id="timeseries" class="chart"></div>
+    <div id="shape-donut" class="chart"></div>
+    <div id="duration-hist" class="chart"></div>
+  </section>
+
+  </main>
+</body>
+</html>
